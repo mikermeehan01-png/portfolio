@@ -22,23 +22,21 @@
     }).catch(function () {});
   }
 
-  // Home: VTOL flies across the hero, behind the name, as the page scrolls.
-  var hero = document.querySelector('.hero-band');
+  // Home: VTOL flies off across the hero, trailing streaks, as soon as the page starts scrolling.
   var drone = document.querySelector('.flyer');
-  if (hero && drone && !reduce) {
-    var ticking = false;
-    var update = function () {
-      ticking = false;
-      var r = hero.getBoundingClientRect();
-      var dist = Math.max(320, Math.min(640, r.height * 0.9));
-      var p = Math.max(0, Math.min(1, -r.top / dist));
-      var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-      var travel = drone.offsetLeft + drone.offsetWidth;
-      drone.style.transform = 'translate(' + (-travel * e).toFixed(1) + 'px,' + (e * 40).toFixed(1) + 'px) rotate(' + (-e * 3).toFixed(2) + 'deg)';
+  if (drone && !reduce) {
+    var flown = false;
+    var check = function () {
+      var down = window.scrollY > 8;
+      if (down === flown) return;
+      flown = down;
+      if (down) drone.style.setProperty('--travel', -(drone.offsetLeft + drone.offsetWidth + 40) + 'px');
+      drone.classList.remove('flying');
+      void drone.offsetWidth;
+      drone.classList.toggle('flown', down);
+      if (down) drone.classList.add('flying');
     };
-    var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    update();
+    window.addEventListener('scroll', check, { passive: true });
+    check();
   }
 })();
