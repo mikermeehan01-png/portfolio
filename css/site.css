@@ -178,37 +178,6 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 
 .feature{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--maroon);padding:clamp(20px,3vw,36px)}
 
-/* Gantt */
-.gantt{overflow-x:auto;border-top:2px solid var(--ink);background:var(--panel)}
-.g-list{list-style:none;padding:0;min-width:780px;position:relative}
-.g-list li{position:relative;z-index:1;display:grid;grid-template-columns:240px 1fr;align-items:center;min-height:34px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.3}
-.g-list li.g-head{min-height:30px;font-size:12.5px;color:var(--steel);border-bottom:1px solid var(--ink)}
-.g-name{padding:6px 12px}
-.g-list li.is-ms .g-name{font-weight:650}
-.g-track{position:relative;height:100%;min-height:34px}
-.g-months{position:relative;height:100%}
-.g-months span{position:absolute;top:50%;transform:translateY(-50%);padding-left:6px;white-space:nowrap}
-.g-bar{position:absolute;top:50%;height:12px;transform:translateY(-50%);background:transparent;border:1px solid var(--dash);overflow:hidden;min-width:4px}
-.g-bar i{display:block;height:100%;background:var(--ink)}
-.g-bar.prog i{background:var(--maroon)}
-.g-bar.buf{border-style:dashed;background:repeating-linear-gradient(45deg,var(--line) 0 3px,transparent 3px 7px)}
-.g-bar.buf i{background:var(--steel)}
-.g-ms{position:absolute;top:50%;width:11px;height:11px;transform:translate(-50%,-50%) rotate(45deg);border:2px solid var(--ink);background:var(--panel)}
-.g-ms.done{background:var(--ink)}
-.g-grid{position:absolute;top:0;bottom:0;left:240px;right:0;pointer-events:none}
-.g-grid b{position:absolute;top:0;bottom:0;width:1px;background:var(--line);opacity:.7}
-.g-today{position:absolute;top:0;bottom:0;width:2px;background:var(--orange);z-index:2}
-.g-today span{position:absolute;bottom:4px;left:5px;font-size:11.5px;font-weight:700;color:var(--orange);white-space:nowrap;background:var(--panel);padding:0 3px}
-.g-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--steel);padding-top:10px}
-.g-legend span{display:inline-flex;align-items:center;gap:6px}
-.lg{display:inline-block;width:18px;height:10px;border:1px solid var(--dash)}
-.lg.done{background:var(--ink);border-color:var(--ink)}
-.lg.prog{background:linear-gradient(90deg,var(--maroon) 50%,transparent 50%)}
-.lg.buf{border-style:dashed;background:repeating-linear-gradient(45deg,var(--line) 0 3px,transparent 3px 7px)}
-.lg.ms{width:10px;height:10px;transform:rotate(45deg);border:2px solid var(--ink)}
-.lg.now{width:2px;height:14px;border:0;background:var(--orange)}
-.g-summary{font-size:15px}
-
 /* PSA altitude scale */
 .altscale{position:relative;height:460px;background:var(--ink);color:var(--ground);flex:1 1 340px;max-width:460px}
 .altscale .tick{position:absolute;left:18px;right:18px;border-top:1px solid #3A4250;font-size:13px;color:#9AA4B1;padding-top:2px}
@@ -230,9 +199,6 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 [hidden]{display:none !important}
 
 @media (max-width:560px){
-  .g-list{min-width:640px}
-  .g-list li{grid-template-columns:150px 1fr;font-size:13px}
-  .g-grid{left:150px}
   .log li{grid-template-columns:1fr;gap:2px}
   .flyer{width:62%;top:150px;right:0}
   .hero-bird{min-height:0;align-self:auto}
