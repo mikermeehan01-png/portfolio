@@ -178,12 +178,15 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 
 .feature{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--maroon);padding:clamp(20px,3vw,36px)}
 
-/* PSA altitude scale */
-.altscale{position:relative;height:460px;background:var(--ink);color:var(--ground);flex:1 1 340px;max-width:460px}
-.altscale .tick{position:absolute;left:18px;right:18px;border-top:1px solid #3A4250;font-size:13px;color:#9AA4B1;padding-top:2px}
-.altscale .band{position:absolute;left:96px;right:18px;top:12%;height:12%;background:var(--maroon);display:flex;align-items:center;padding:0 14px;font-weight:700;font-size:15px;color:#fff}
-.altscale .note{position:absolute;left:96px;right:18px;top:27%;font-size:14px;line-height:1.35}
-.altscale .sea{position:absolute;left:18px;right:18px;bottom:0;border-top:2px solid var(--ground);font-size:13px;color:#9AA4B1;padding:4px 0 8px}
+/* PSA phases */
+.phases{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.phases li{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--ink);padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.phases li.now{border-top-color:var(--maroon)}
+.phases small{font-size:13.5px;color:var(--steel)}
+.phases h3{font-variation-settings:"wdth" 112;font-size:21px;font-weight:750;line-height:1.2}
+.phases p{font-size:15.5px;line-height:1.5;color:var(--body)}
+.phases .phase-out{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);color:var(--steel);font-size:14.5px}
+.phases .chip{align-self:flex-start;margin-top:auto}
 
 /* Other projects */
 .kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:2px solid var(--ink);margin-bottom:clamp(56px,7vw,88px)}
