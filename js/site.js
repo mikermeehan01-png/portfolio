@@ -22,16 +22,16 @@
     }).catch(function () {});
   }
 
-  // Home: VTOL lifts off near the Hokie Bird and climbs across the name as the page scrolls.
-  // On desktop the hero is pinned for a short stretch so the flight plays out before the page moves on.
+  // Home: VTOL lifts off near the Hokie Bird and climbs behind the name as the page scrolls.
+  // It flies along the render's own nose heading (about 18 degrees nose-up), so the flight path and trail line up with the airframe.
   var hero = document.querySelector('.hero-band');
   var drone = document.querySelector('.flyer');
   var bird = document.querySelector('.hero-bird img');
   var name = document.querySelector('.hero-name');
-  var wrap = document.querySelector('.hero-pin');
-  var space = document.querySelector('.pin-space');
   if (hero && drone && bird && name) {
     var trail = drone.querySelector('.trail');
+    var heading = 17.8 * Math.PI / 180;
+    var cosH = Math.cos(heading), tanH = Math.tan(heading);
     var ticking = false;
     var place = function () {
       ticking = false;
@@ -39,37 +39,22 @@
       var br = bird.getBoundingClientRect();
       var nr = name.getBoundingClientRect();
       var W = drone.offsetWidth, H = drone.offsetHeight;
-      var bx = br.left - hr.left, by = br.top - hr.top;
-      var nTop = nr.top - hr.top, nBot = nr.bottom - hr.top, nRight = nr.right - hr.left;
-      var p0 = { x: bx - W * 0.05, y: by - H * 0.15 };
-      var p1 = { x: nRight * 0.9, y: nBot - (nBot - nTop) * 0.2 };
-      var p2 = { x: -W * 0.75, y: nTop - H * 0.8 };
-      var pin = space ? space.offsetHeight : 0;
-      var scrolled, dist, follow;
-      if (pin > 0) {
-        var off = Math.max(0, hero.offsetHeight - window.innerHeight);
-        hero.style.top = -off + 'px';
-        scrolled = Math.max(0, -wrap.getBoundingClientRect().top - off);
-        dist = pin;
-        follow = 0;
-      } else {
-        hero.style.top = '';
-        scrolled = Math.max(0, -hr.top);
-        dist = Math.max(280, Math.min(420, hr.height * 0.4));
-        follow = 0.5;
-      }
+      var nTop = nr.top - hr.top, nBot = nr.bottom - hr.top, nLeft = nr.left - hr.left, nRight = nr.right - hr.left;
+      var target = { x: nLeft + (nRight - nLeft) * 0.62, y: nTop + (nBot - nTop) * 0.7 };
+      var birdBesideName = br.top - nr.bottom < 300;
+      var x0 = birdBesideName ? br.left - hr.left - W * 0.05 : hr.width + W * 0.6;
+      var y0 = target.y + (x0 - target.x) * tanH;
+      var xEnd = -W * 0.7;
+      var length = (x0 - xEnd) / cosH;
+      var scrolled = Math.max(0, -hr.top);
+      var dist = Math.max(360, Math.min(560, window.innerHeight * 0.6));
       var p = reduce ? 0 : Math.min(1, scrolled / dist);
-      var e = p * p * (3 - 2 * p);
-      var u = 1 - e;
-      var x = u * u * p0.x + 2 * u * e * p1.x + e * e * p2.x;
-      var y = u * u * p0.y + 2 * u * e * p1.y + e * e * p2.y + Math.min(scrolled, dist) * follow * u;
-      var dx = 2 * u * (p1.x - p0.x) + 2 * e * (p2.x - p1.x);
-      var dy = 2 * u * (p1.y - p0.y) + 2 * e * (p2.y - p1.y);
-      var climb = Math.atan2(-dy, -dx) * 180 / Math.PI;
-      var tilt = e > 0 ? Math.max(-4, Math.min(14, climb * 0.5)) : 0;
-      var s = 0.42 + 0.78 * e;
-      drone.style.transform = 'translate(' + (x - W / 2).toFixed(1) + 'px,' + (y - H / 2).toFixed(1) + 'px) rotate(' + tilt.toFixed(2) + 'deg) scale(' + s.toFixed(3) + ')';
-      if (trail) trail.style.opacity = (Math.sin(Math.PI * Math.min(1, e * 1.15)) * 0.95).toFixed(2);
+      var travel = p * length;
+      var x = x0 - travel * cosH;
+      var y = y0 - travel * Math.sin(heading);
+      var s = 0.42 + 0.73 * p;
+      drone.style.transform = 'translate(' + (x - W / 2).toFixed(1) + 'px,' + (y - H / 2).toFixed(1) + 'px) scale(' + s.toFixed(3) + ')';
+      if (trail) trail.style.opacity = (Math.min(1, p * 6) * (1 - Math.max(0, p - 0.75) * 4) * 0.9).toFixed(2);
       drone.classList.add('ready');
     };
     var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(place); } };

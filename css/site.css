@@ -50,16 +50,12 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 
 /* Home hero */
 .hero-band{position:relative;overflow:hidden}
-@media (min-width:761px) and (prefers-reduced-motion:no-preference){
-  .pin-space{height:440px}
-  .hero-pin .hero-band{position:sticky;top:0;min-height:100vh}
-}
 .hero-band .wrap{position:relative;z-index:2}
 .flyer{position:absolute;z-index:1;top:0;left:0;width:min(40vw,500px);pointer-events:none;will-change:transform;transform-origin:50% 50%;visibility:hidden}
 .flyer.ready{visibility:visible}
 .flyer img{width:100%;height:auto;transform:scaleX(-1)}
 .flyer .bob{position:relative;z-index:1}
-.trail{position:absolute;left:55%;top:32%;width:120%;height:30%;pointer-events:none;opacity:0}
+.trail{position:absolute;left:63%;top:43%;width:90%;height:22%;pointer-events:none;opacity:0;transform-origin:0 50%;transform:rotate(17.8deg)}
 .trail i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(86,96,110,.8),rgba(86,96,110,0))}
 .trail i:nth-child(1){top:0}
 .trail i:nth-child(2){top:50%;height:4px}
