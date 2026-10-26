@@ -9,5 +9,4 @@ Static site for GitHub Pages. No build step: edit the HTML and push.
 ## Common edits
 - Bullets and text: edit the `<li>` and `<p>` tags directly in the page.
 - Resume: add `resume.pdf` to this folder. The Resume buttons appear automatically.
-- Aerial drop clip: save it as `video/drop-aerial.mp4`. It appears on the Payload page automatically.
 - Gray Goose specs: fill in the table in `aircraft.html` and delete its `hidden` attribute.

@@ -95,6 +95,16 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 .log time{font-weight:700}
 .log li.future{color:var(--maroon);font-weight:600}
 
+/* About */
+.about{display:flex;flex-wrap:wrap;gap:28px clamp(28px,5vw,72px);align-items:center;padding-top:clamp(56px,7vw,96px)}
+.about-photo{flex:0 0 auto;width:clamp(200px,22vw,280px);position:relative;margin:0 14px 14px 0}
+.about-photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;background:var(--maroon)}
+.about-photo img{position:relative;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.about-text{flex:1 1 420px;min-width:0}
+.about-text h2{margin-bottom:16px}
+.about-text p{max-width:40em;font-size:clamp(17px,1.5vw,19px);color:var(--body)}
+.about-text p + p{margin-top:12px}
+
 /* Footers */
 .footer-big{background:var(--ink);color:var(--ground);padding:clamp(56px,8vw,96px) 0 36px}
 .footer-big .inner{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between}

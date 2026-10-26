@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Payload: Deployment &amp; Strategies | Mike Meehan</title>
-<meta name="description" content="SUAS parachute payload system and CUASC release system, 1st place CUASC package drop.">
+<title>Mike Meehan: Engineering Portfolio</title>
+<meta name="description" content="SUAS parachute payload system and C-UASC release system, 1st place C-UASC package drop.">
 <link rel="icon" href="img/hokiebird.webp">
 <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
@@ -29,9 +29,9 @@
       <dl class="tb">
         <div><dt>Organization</dt><dd>AAV at Virginia Tech</dd></div>
         <div><dt>My role</dt><dd>Payload sub-team lead</dd></div>
-        <div><dt>Competitions</dt><dd>SUAS and CUASC</dd></div>
+        <div><dt>Competitions</dt><dd>SUAS and C-UASC</dd></div>
         <div><dt>Season</dt><dd>2025–26</dd></div>
-        <div><dt>Result</dt><dd class="win">1st, CUASC package drop</dd></div>
+        <div><dt>Result</dt><dd class="win">1st, C-UASC package drop</dd></div>
       </dl>
     </div>
   </div>
@@ -43,100 +43,93 @@
   <nav class="cats" aria-label="Payload systems">
     <a class="cat" href="#suas">
       <div class="cat-img contain"><img src="img/cad-beacon-system.jpg" alt=""></div>
-      <div class="cat-text"><small>SUAS</small><b class="cat-t">SUAS Parachute System</b><span>Beacon and water bottle payloads under 24" chutes</span></div>
+      <div class="cat-text"><small>SUAS</small><b class="cat-t">Search &amp; Rescue System</b><span>Beacon and water bottle payloads under 24" chutes</span></div>
     </a>
     <a class="cat" href="#cuasc">
       <div class="cat-img contain"><img src="img/cad-beanbag-release.jpg" alt=""></div>
-      <div class="cat-text"><small>CUASC</small><b class="cat-t">CUASC System</b><span>Beanbag and cube releases, 1st place package drop</span></div>
+      <div class="cat-text"><small>C-UASC</small><b class="cat-t">Package Delivery System</b><span>Beanbag and cube releases, 1st place package drop</span></div>
     </a>
   </nav>
 
   <section id="suas" class="block">
-    <div class="sec-h"><h2 class="h-sec">SUAS Parachute System</h2></div>
+    <div class="sec-h"><h2 class="h-sec">Search &amp; Rescue System</h2></div>
     <div class="split">
-      <p>A quick-release payload system that carries a locator beacon and a water bottle, each recovered under its own parachute.</p>
+      <p>A rapid-response payload system that safely delivers a locator beacon and a water bottle from above 150 ft AGL.</p>
       <ul class="ticks">
-        <li>Designed a quick-release mount with a pogo-pin connector, so payloads swap on the aircraft without rewiring</li>
-        <li>Ran parachute recovery end to end: selected 24" Top Flight Recovery X-type chutes, packed them in a printed TPU harness with a foam ejection block, and drop-tested</li>
-        <li>Water bottle and beacon payloads drop on E-flite EFLA405 servoless releases</li>
-        <li>WeMos D1 Mini microcontrollers run the release logic and the locator beacon</li>
+        <li>Soft-mounted magnetic connectors trigger the descent logic once the payload drops</li>
+        <li>Led parachute recovery from start to finish: chose the 24" Top Flight Recovery X-chutes, designed the printed TPU harness and foam ejection block that pack them, and drop-tested the full system</li>
+        <li>Water bottle and beacon payloads drop from modified E-flite EFLA405 servoless releases</li>
+        <li>ESP8266-based microcontrollers run the parachute deployment logic</li>
+        <li>Reduced fasteners by using multi-material 3D printing</li>
         <li>Logged drop-test data and processed it in MATLAB to tune release timing and placement</li>
       </ul>
     </div>
 
     <div class="row">
-      <figure style="flex:2 1 520px">
-        <div class="sheet" style="--h:460px"><img src="img/cad-beacon-system.jpg" alt="CAD drawing of the beacon payload system with labeled components" loading="lazy"></div>
-        <figcaption class="cap">Beacon payload, prototype 2: pogo-pin connector, servo release pin, TPU harness, foam ejection block, 24" X-chute</figcaption>
+      <figure style="flex:3 1 520px">
+        <div class="sheet" style="--h:440px"><img src="img/cad-beacon-system.jpg" alt="CAD drawing of the beacon payload system with labeled components" loading="lazy"></div>
+        <figcaption class="cap">Beacon payload: CAD model</figcaption>
+      </figure>
+      <figure style="flex:2 1 380px">
+        <div class="sheet" style="--h:440px"><img src="img/beacon-wrap-cad.jpg" alt="CAD views of the multi-material beacon wrap with flexible arms around a rigid base" loading="lazy"></div>
+        <figcaption class="cap">Multi-material beacon wrap: CAD model</figcaption>
       </figure>
     </div>
     <div class="row gap-after">
       <figure style="flex:1 1 280px">
-        <div class="media tall" style="--h:440px"><img src="img/payload-on-condor.jpg" alt="Payload hanging under the quadcopter on a workbench" loading="lazy"></div>
-        <figcaption class="cap">Mounted on the quick-release</figcaption>
+        <div class="media tall" style="--h:440px"><img src="img/payload-on-condor.jpg" alt="Payload hanging under the S500 testbed quadcopter on a workbench" loading="lazy"></div>
+        <figcaption class="cap">Initial testing on S500 testbed</figcaption>
       </figure>
       <figure style="flex:1 1 280px">
-        <div class="media tall" style="--h:440px"><img src="img/payload-beacon.jpg" alt="Payload stack with water bottle and beacon held up in a hangar" loading="lazy"></div>
-        <figcaption class="cap">Beacon and water bottle stack</figcaption>
+        <div class="media tall" style="--h:440px"><img src="img/payload-beacon.jpg" alt="Full SUAS payload system with water bottle and beacon held up in a hangar" loading="lazy"></div>
+        <figcaption class="cap">Full SUAS competition system</figcaption>
       </figure>
       <figure style="flex:2 1 460px">
-        <div class="sheet" style="--h:440px"><img src="img/cad-suas-mount.jpg" alt="CAD drawing of the SUAS payload mount with water bottle and beacon payloads" loading="lazy"></div>
-        <figcaption class="cap">SUAS mount: water bottle and beacon payloads on EFLA405 releases</figcaption>
+        <div class="sheet" style="--h:440px"><img src="img/cad-suas-mount.jpg" alt="CAD drawing of the SUAS payload system with water bottle and beacon payloads" loading="lazy"></div>
+        <figcaption class="cap">SUAS System: CAD model</figcaption>
       </figure>
     </div>
 
-    <h3 class="h-sub">Drop testing</h3>
-    <p class="muted" style="margin-bottom:18px;max-width:62ch">Every chute packing and release change got dropped before it flew at competition.</p>
+    <h3 class="h-sub" style="margin-bottom:16px">Drop testing</h3>
     <div class="row">
-      <!-- Aerial clip: save a trimmed, muted MP4 as video/drop-aerial.mp4 and it shows up automatically. -->
-      <figure class="clip" style="flex:1 1 320px" data-optional hidden>
-        <div class="media sky tall" style="--h:560px"><video src="video/drop-aerial.mp4" autoplay muted loop playsinline preload="auto" aria-label="Parachute drop test filmed from the chase drone"></video></div>
-        <figcaption class="cap">From the chase drone</figcaption>
+      <figure class="clip" style="flex:1 1 320px">
+        <div class="media sky tall" style="--h:560px"><video src="video/drop-first.mp4" poster="video/drop-first.jpg" autoplay muted loop playsinline aria-label="First parachute drop test filmed from the chase drone"></video></div>
+        <figcaption class="cap">First parachute drop test</figcaption>
       </figure>
       <figure class="clip" style="flex:1 1 320px">
         <div class="media sky tall" style="--h:560px"><video src="video/chute-drop.mp4" poster="video/chute-drop.jpg" autoplay muted loop playsinline aria-label="Parachute drop test seen from the ground"></video></div>
-        <figcaption class="cap">From the ground, 24" chute</figcaption>
+        <figcaption class="cap">Final testing before competition</figcaption>
       </figure>
-      <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end">
-        <dl class="tb one">
-          <div><dt>Chute</dt><dd>Top Flight Recovery 24" X-type</dd></div>
-          <div><dt>Ejection</dt><dd>Foam block, printed TPU harness</dd></div>
-          <div><dt>Release</dt><dd>Spektrum 2.9 g linear servo</dd></div>
-          <div><dt>Data</dt><dd>Processed in MATLAB</dd></div>
-        </dl>
-      </div>
     </div>
   </section>
 
   <section id="cuasc" class="block">
-    <div class="sec-h"><h2 class="h-sec">CUASC System</h2><span class="chip">1st place, package drop</span></div>
+    <div class="sec-h"><h2 class="h-sec">Package Delivery System</h2><span class="chip">1st place, package drop</span></div>
     <div class="split">
-      <p>Purpose-built release modules for each CUASC package type, on a common quick-release adapter.</p>
+      <p>Purpose-built release modules for each C-UASC package type, using a common quick release system.</p>
       <ul class="ticks">
-        <li>Built a release module for each package type: a flexible TPU mesh for beanbags and a servo-driven cage for cubes</li>
-        <li>Beanbag modules drop on E-flite servoless releases; the cube cage releases on an MG995 servo</li>
-        <li>Both modules mount on a shared quick-release adapter</li>
-        <li>Took 1st place in the CUASC package drop challenge</li>
+        <li>Designed separate release modules for beanbags and cubes</li>
+        <li>Took 1st place in the C-UASC package drop challenge</li>
       </ul>
     </div>
     <div class="row">
       <figure style="flex:1 1 380px">
         <div class="sheet" style="--h:320px"><img src="img/cad-beanbag-release.jpg" alt="CAD drawing of the beanbag release module" loading="lazy"></div>
-        <figcaption class="cap">Beanbag release with flexible TPU mesh</figcaption>
+        <figcaption class="cap">Beanbag system: CAD model</figcaption>
       </figure>
       <figure style="flex:1 1 380px">
-        <div class="sheet" style="--h:320px"><img src="img/cad-cube-release.jpg" alt="CAD drawing of the cube cage release with servo" loading="lazy"></div>
-        <figcaption class="cap">Cube cage with MG995 servo release</figcaption>
+        <div class="sheet" style="--h:320px"><img src="img/cad-cube-release.jpg" alt="CAD drawing of the cube release module" loading="lazy"></div>
+        <figcaption class="cap">Cube system: CAD model</figcaption>
       </figure>
     </div>
     <div class="row">
       <figure style="flex:1 1 280px">
         <div class="media tall" style="--h:420px"><img src="img/cuasc-condor-field.jpg" alt="Quadcopter on a dirt field with a radio tower behind" loading="lazy"></div>
-        <figcaption class="cap">On the field at CUASC</figcaption>
+        <figcaption class="cap">On the field at C-UASC</figcaption>
       </figure>
       <figure style="flex:2 1 520px">
         <div class="media" style="--h:420px"><img src="img/cuasc-team.jpg" alt="Five AAV team members in safety vests holding the drone" loading="lazy"></div>
-        <figcaption class="cap">AAV at CUASC</figcaption>
+        <figcaption class="cap">AAV at C-UASC</figcaption>
       </figure>
     </div>
   </section>

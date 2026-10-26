@@ -14,13 +14,6 @@
     }
   });
 
-  // Optional media: a figure marked data-optional stays hidden until its video file exists.
-  document.querySelectorAll('figure[data-optional] video').forEach(function (v) {
-    var fig = v.closest('figure');
-    v.addEventListener('loadeddata', function () { fig.hidden = false; });
-    v.load();
-  });
-
   // Resume buttons only show once resume.pdf is in the site folder.
   var resumeLinks = document.querySelectorAll('.resume-link');
   if (resumeLinks.length && window.fetch) {
