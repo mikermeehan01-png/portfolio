@@ -176,6 +176,8 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 .callout b{font-variation-settings:"wdth" 125;font-size:clamp(24px,2.8vw,36px);font-weight:800;line-height:1.1}
 .callout span{color:#B7BFC9;max-width:52ch}
 
+.feature{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--maroon);padding:clamp(20px,3vw,36px)}
+
 /* PSA altitude scale */
 .altscale{position:relative;height:460px;background:var(--ink);color:var(--ground);flex:1 1 340px;max-width:460px}
 .altscale .tick{position:absolute;left:18px;right:18px;border-top:1px solid #3A4250;font-size:13px;color:#9AA4B1;padding-top:2px}
