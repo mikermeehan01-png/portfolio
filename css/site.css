@@ -178,15 +178,12 @@ h1,h2,h3,p,ul,ol,dl,figure{margin:0}
 
 .feature{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--maroon);padding:clamp(20px,3vw,36px)}
 
-/* PSA phases */
-.phases{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.phases li{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--ink);padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px}
-.phases li.now{border-top-color:var(--maroon)}
-.phases small{font-size:13.5px;color:var(--steel)}
-.phases h3{font-variation-settings:"wdth" 112;font-size:21px;font-weight:750;line-height:1.2}
-.phases p{font-size:15.5px;line-height:1.5;color:var(--body)}
-.phases .phase-out{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);color:var(--steel);font-size:14.5px}
-.phases .chip{align-self:flex-start;margin-top:auto}
+/* PSA tasks */
+.tasks{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.tasks li{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--ink);padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.tasks small{font-size:13.5px;color:var(--steel)}
+.tasks h3{font-variation-settings:"wdth" 112;font-size:21px;font-weight:750;line-height:1.2}
+.tasks p{font-size:15.5px;line-height:1.5;color:var(--body)}
 
 /* Other projects */
 .kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:2px solid var(--ink);margin-bottom:clamp(56px,7vw,88px)}
