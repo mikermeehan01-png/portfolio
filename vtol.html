@@ -26,18 +26,20 @@
     </header>
     <div class="page-head">
       <div style="display:flex;flex-wrap:wrap;gap:24px clamp(24px,4vw,56px);align-items:center;margin-bottom:32px">
-        <div style="flex:1 1 460px;min-width:0">
-          <h1 class="page-title" style="margin-bottom:20px">Search-and-rescue tilt-rotor VTOL</h1>
-          <p class="page-intro" style="margin-bottom:0">Takes off like a multirotor, cruises like a fixed-wing. Two front rotors tilt between hover and cruise; a third rear rotor runs only in hover.</p>
+        <div style="flex:1 1 440px;min-width:0">
+          <h1 class="page-title" style="margin-bottom:20px;font-size:clamp(40px,4.8vw,68px)">Search-and-rescue tilt-rotor VTOL</h1>
+          <p class="page-intro" style="margin-bottom:0">A hybrid VTOL system built for rapid response in search and rescue: vertical takeoff from tight spaces, then fixed-wing range to reach the search area fast.</p>
         </div>
-        <img src="img/vtol-flying.webp" alt="Rendering of the tilt-rotor VTOL in forward flight" style="flex:1 1 420px;min-width:0;max-width:620px;width:100%;height:auto">
+        <figure style="flex:1 1 460px;min-width:0;max-width:640px">
+          <div class="sheet" style="--h:clamp(260px,30vw,400px);padding:18px"><img src="img/vtol-render.jpg" alt="CAD render of the tilt-rotor VTOL"></div>
+          <figcaption class="cap">Preliminary design, October 2026</figcaption>
+        </figure>
       </div>
       <dl class="tb">
-        <div><dt>Organization</dt><dd>Senior design, Team 408</dd></div>
+        <div><dt>Organization</dt><dd>Senior capstone</dd></div>
         <div><dt>My role</dt><dd>Structures &amp; Manufacturing</dd></div>
-        <div><dt>Customer</dt><dd>AAV, for SUAS</dd></div>
-        <div><dt>Advisor</dt><dd>Dr. Kevin Kochersberger</dd></div>
-        <div><dt>Status</dt><dd>PDR complete, Oct 2026</dd></div>
+        <div><dt>Customer</dt><dd>AAV, for the SUAS competition (RoboNation)</dd></div>
+        <div><dt>Status</dt><dd>PDR complete; CDR in December</dd></div>
       </dl>
     </div>
   </div>
@@ -50,42 +52,69 @@
       <p class="muted" style="max-width:40ch">On a seven-person team, I'm on structures and manufacturing, and pitch in on propulsion sizing, electronics and prototyping.</p>
     </div>
     <ul class="ticks">
-      <li>Built the hover and cruise energy estimates the team used to score concepts; the 2x-tilt tri-rotor beat a 2x-tilt quad 3.91 to 3.81</li>
-      <li>Ran the wing spar trade study: round vs. square carbon tube, sized as a cantilever under tilt-rotor thrust</li>
-      <li>Next: tilt mechanism prototyping, FEA, and a carbon fiber layup for the flight airframe</li>
+      <li>Calculated hover and cruise energy estimates for the 4+1, 2x-tilt quad-rotor, and 2x-tilt tri-rotor configurations, built on the mission profile; they drove the concept down-select</li>
+      <li>Ran trade studies and analyzed manufacturing methods for the wing</li>
+      <li>Designed the full electrical wiring diagram for the aircraft</li>
+      <li>Building a model of the aircraft to run SITL simulations</li>
+      <li>Presented our preliminary design review to stakeholders</li>
+      <li>Next: the critical design review in December, with a functioning tilt mechanism prototype</li>
     </ul>
   </div>
 
-  <dl class="tb specs" style="margin-bottom:28px">
+  <dl class="tb specs" style="margin-bottom:clamp(40px,5vw,64px)">
     <div><dt>Wingspan</dt><dd>2.36 m</dd></div>
     <div><dt>Aspect ratio</dt><dd>9.8</dd></div>
     <div><dt>Estimated MTOW</dt><dd>20–23 lb</dd></div>
     <div><dt>Mission target</dt><dd>30 mi + 4 min hover</dd></div>
-    <div><dt>Airfoil</dt><dd>AG35</dd></div>
+    <div><dt>Battery</dt><dd>12S3P Li-ion, 648 Wh</dd></div>
   </dl>
 
-  <figure style="margin-bottom:12px">
-    <div class="sheet" style="--h:clamp(300px,40vw,520px);padding:20px"><img src="img/vtol-render.jpg" alt="CAD render of the tilt-rotor VTOL" loading="lazy"></div>
-    <figcaption class="cap">Preliminary design, October 2026</figcaption>
-  </figure>
-  <div class="row">
+  <div class="sec-h"><h2 class="h-sec">Schedule</h2><span class="muted g-summary"></span></div>
+  <div class="gantt" data-start="2026-08-24" data-end="2027-05-01">
+    <ol class="g-list">
+      <li data-start="2026-08-24" data-end="2026-09-11">Project kickoff &amp; requirements</li>
+      <li data-start="2026-09-01" data-end="2026-09-25">Concept generation &amp; trade studies</li>
+      <li data-start="2026-09-14" data-end="2026-10-05">Preliminary design &amp; PDR prep</li>
+      <li data-start="2026-10-06" data-end="2026-10-08" data-type="milestone">PDR presentations</li>
+      <li data-start="2026-10-14" data-end="2026-10-14" data-type="milestone">PDR report due</li>
+      <li data-start="2026-10-12" data-end="2026-11-20">Detailed CAD &amp; engineering analysis</li>
+      <li data-start="2026-10-19" data-end="2026-11-20">Subsystem prototyping &amp; testing</li>
+      <li data-start="2026-11-02" data-end="2026-12-01">Finalize BOM</li>
+      <li data-start="2026-11-16" data-end="2026-11-30">Design review &amp; CDR prep</li>
+      <li data-start="2026-12-01" data-end="2026-12-03" data-type="milestone">CDR presentations</li>
+      <li data-start="2026-12-08" data-end="2026-12-08" data-type="milestone">CDR report due</li>
+      <li data-start="2026-12-01" data-end="2027-01-08" data-type="buffer">Ordering &amp; procurement</li>
+      <li data-start="2027-01-04" data-end="2027-02-05">Airframe fabrication &amp; 3D printing</li>
+      <li data-start="2027-01-25" data-end="2027-02-12" data-type="buffer">Manufacturing contingency</li>
+      <li data-start="2027-01-25" data-end="2027-02-19">Propulsion, electronics &amp; controls integration</li>
+      <li data-start="2027-02-08" data-end="2027-02-22">Assembly &amp; bench testing</li>
+      <li data-start="2027-02-23" data-end="2027-02-25" data-type="milestone">Test readiness review</li>
+      <li data-start="2027-02-26" data-end="2027-03-19">Flight testing &amp; tuning</li>
+      <li data-start="2027-03-08" data-end="2027-03-26" data-type="buffer">Flight test contingency</li>
+      <li data-start="2027-03-15" data-end="2027-04-01">Performance data analysis</li>
+      <li data-start="2027-03-22" data-end="2027-04-29">Final presentation &amp; report</li>
+      <li data-start="2027-04-13" data-end="2027-04-15" data-type="milestone">Final review</li>
+      <li data-start="2027-04-23" data-end="2027-04-23" data-type="milestone">Design Expo</li>
+    </ol>
+  </div>
+  <div class="g-legend" aria-hidden="true">
+    <span><i class="lg done"></i>Complete</span><span><i class="lg prog"></i>In progress</span><span><i class="lg todo"></i>Upcoming</span><span><i class="lg buf"></i>Buffer</span><span><i class="lg ms"></i>Milestone</span><span><i class="lg now"></i>Today</span>
+  </div>
+
+  <div class="row" style="margin-top:clamp(48px,6vw,80px)">
     <figure style="flex:3 1 460px">
       <div class="sheet" style="--h:300px"><img src="img/vtol-concepts.jpg" alt="Sketches of four tilt-rotor concepts" loading="lazy"></div>
       <figcaption class="cap">Four concepts screened from 21 sketches</figcaption>
     </figure>
     <figure style="flex:2 1 360px">
-      <div class="sheet" style="--h:300px"><img src="img/vtol-pugh.jpg" alt="Weighted decision matrix comparing tilt quad-rotor and tilt tri-rotor" loading="lazy"></div>
+      <div class="sheet" style="--h:300px"><img src="img/vtol-pugh.jpg" alt="Weighted decision matrix comparing the 4+1, tilt quad-rotor and tilt tri-rotor" loading="lazy"></div>
       <figcaption class="cap">Down-select weighted on cruise energy (45%) and MTOW (32.5%)</figcaption>
     </figure>
   </div>
   <div class="row" style="margin-bottom:clamp(56px,7vw,96px)">
-    <figure style="flex:1 1 420px">
-      <div class="sheet" style="--h:260px"><img src="img/vtol-tilt-proto.jpg" alt="Three photos of the tilt mechanism prototype rotating" loading="lazy"></div>
-      <figcaption class="cap">Tilt mechanism test rig: hover, transition, cruise</figcaption>
-    </figure>
-    <figure style="flex:1 1 420px">
-      <div class="sheet" style="--h:260px"><img src="img/vtol-wiring.jpg" alt="Wiring diagram of the VTOL electrical system" loading="lazy"></div>
-      <figcaption class="cap">Electrical and power layout</figcaption>
+    <figure style="flex:1 1 100%">
+      <div class="sheet" style="--h:clamp(280px,36vw,480px)"><img src="img/vtol-wiring.jpg" alt="Full electrical wiring diagram of the VTOL" loading="lazy"></div>
+      <figcaption class="cap">Full electrical wiring diagram</figcaption>
     </figure>
   </div>
 
