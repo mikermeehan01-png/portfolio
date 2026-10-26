@@ -22,21 +22,60 @@
     }).catch(function () {});
   }
 
-  // Home: VTOL flies off across the hero, trailing streaks, as soon as the page starts scrolling.
+  // Home: VTOL lifts off near the Hokie Bird and climbs across the name as the page scrolls.
+  // On desktop the hero is pinned for a short stretch so the flight plays out before the page moves on.
+  var hero = document.querySelector('.hero-band');
   var drone = document.querySelector('.flyer');
-  if (drone && !reduce) {
-    var flown = false;
-    var check = function () {
-      var down = window.scrollY > 8;
-      if (down === flown) return;
-      flown = down;
-      if (down) drone.style.setProperty('--travel', -(drone.offsetLeft + drone.offsetWidth + 40) + 'px');
-      drone.classList.remove('flying');
-      void drone.offsetWidth;
-      drone.classList.toggle('flown', down);
-      if (down) drone.classList.add('flying');
+  var bird = document.querySelector('.hero-bird img');
+  var name = document.querySelector('.hero-name');
+  var wrap = document.querySelector('.hero-pin');
+  var space = document.querySelector('.pin-space');
+  if (hero && drone && bird && name) {
+    var trail = drone.querySelector('.trail');
+    var ticking = false;
+    var place = function () {
+      ticking = false;
+      var hr = hero.getBoundingClientRect();
+      var br = bird.getBoundingClientRect();
+      var nr = name.getBoundingClientRect();
+      var W = drone.offsetWidth, H = drone.offsetHeight;
+      var bx = br.left - hr.left, by = br.top - hr.top;
+      var nTop = nr.top - hr.top, nBot = nr.bottom - hr.top, nRight = nr.right - hr.left;
+      var p0 = { x: bx - W * 0.05, y: by - H * 0.15 };
+      var p1 = { x: nRight * 0.9, y: nBot - (nBot - nTop) * 0.2 };
+      var p2 = { x: -W * 0.75, y: nTop - H * 0.8 };
+      var pin = space ? space.offsetHeight : 0;
+      var scrolled, dist, follow;
+      if (pin > 0) {
+        var off = Math.max(0, hero.offsetHeight - window.innerHeight);
+        hero.style.top = -off + 'px';
+        scrolled = Math.max(0, -wrap.getBoundingClientRect().top - off);
+        dist = pin;
+        follow = 0;
+      } else {
+        hero.style.top = '';
+        scrolled = Math.max(0, -hr.top);
+        dist = Math.max(280, Math.min(420, hr.height * 0.4));
+        follow = 0.5;
+      }
+      var p = reduce ? 0 : Math.min(1, scrolled / dist);
+      var e = p * p * (3 - 2 * p);
+      var u = 1 - e;
+      var x = u * u * p0.x + 2 * u * e * p1.x + e * e * p2.x;
+      var y = u * u * p0.y + 2 * u * e * p1.y + e * e * p2.y + Math.min(scrolled, dist) * follow * u;
+      var dx = 2 * u * (p1.x - p0.x) + 2 * e * (p2.x - p1.x);
+      var dy = 2 * u * (p1.y - p0.y) + 2 * e * (p2.y - p1.y);
+      var climb = Math.atan2(-dy, -dx) * 180 / Math.PI;
+      var tilt = e > 0 ? Math.max(-4, Math.min(14, climb * 0.5)) : 0;
+      var s = 0.42 + 0.78 * e;
+      drone.style.transform = 'translate(' + (x - W / 2).toFixed(1) + 'px,' + (y - H / 2).toFixed(1) + 'px) rotate(' + tilt.toFixed(2) + 'deg) scale(' + s.toFixed(3) + ')';
+      if (trail) trail.style.opacity = (Math.sin(Math.PI * Math.min(1, e * 1.15)) * 0.95).toFixed(2);
+      drone.classList.add('ready');
     };
-    window.addEventListener('scroll', check, { passive: true });
-    check();
+    var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(place); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', place);
+    if (bird.complete) place(); else bird.addEventListener('load', place);
   }
 })();
