@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High-Altitude Cloud Seeding UAV | Mike Meehan</title>
+<meta name="description" content="Engineering internship at PSA Systems: airframe and mission analysis for a high-altitude cloud seeding UAV.">
+<link rel="icon" href="img/hokiebird.webp">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="blueprint">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">Mike Meehan: Engineering Portfolio</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="payload.html">Payload systems</a>
+        <a href="aircraft.html">Aircraft</a>
+        <a href="vtol.html">Tilt-rotor VTOL</a>
+        <a href="psa.html" aria-current="page">PSA Systems</a>
+        <a href="other-projects.html">Other projects</a>
+      </nav>
+    </header>
+    <div class="page-head">
+      <h1 class="page-title" style="max-width:12em">High-altitude cloud seeding UAV</h1>
+      <p class="page-intro">Airframe and mission analysis for a fixed-wing UAV that seeds clouds well above where most small aircraft can fly.</p>
+      <dl class="tb">
+        <div><dt>Organization</dt><dd>PSA Systems</dd></div>
+        <div><dt>My role</dt><dd>Engineering intern</dd></div>
+        <div><dt>Altitude</dt><dd>19,000–22,000 ft</dd></div>
+        <div><dt>Conditions</dt><dd>50 kt gusts, icing</dd></div>
+        <div><dt>Payload</dt><dd>5–10 lb</dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<main class="wrap body">
+  <div class="split" style="gap:32px clamp(24px,5vw,72px);margin-bottom:clamp(56px,7vw,96px)">
+    <div class="altscale" role="img" aria-label="Altitude scale from sea level to 25,000 feet. The seeding band is 19,000 to 22,000 feet, where air density is about 53 percent of sea level.">
+      <div class="tick" style="top:0">25,000 ft</div>
+      <div class="tick" style="top:20%">20,000 ft</div>
+      <div class="tick" style="top:40%">15,000 ft</div>
+      <div class="tick" style="top:60%">10,000 ft</div>
+      <div class="tick" style="top:80%">5,000 ft</div>
+      <div class="band">Seeding band</div>
+      <div class="note">Air density about 53% of sea level. Rotors and wings both have to work harder.</div>
+      <div class="sea">Sea level</div>
+    </div>
+    <div>
+      <h2 class="h-sub" style="margin-bottom:14px">What I did</h2>
+      <ul class="ticks">
+        <li>Modeled the airframe in OpenVSP and showed the wing area was undersized for the mission</li>
+        <li>Built a hover endurance calculator with an ISA atmosphere, motor model, and battery discharge model, validated against eCalc</li>
+        <li>Ran configuration trades that ruled out VTOL conversion on mass budget, in favor of catapult launch and parachute recovery</li>
+        <li>Ranked propulsion layouts; a single nose-mounted tractor came out on top</li>
+        <li>Analyzed multirotor hover power at altitude for comparison</li>
+      </ul>
+      <!-- If PSA is OK sharing it, add an OpenVSP screenshot here:
+      <figure style="margin-top:28px">
+        <div class="sheet" style="--h:280px"><img src="img/psa-openvsp.jpg" alt="OpenVSP model of the cloud seeding UAV" loading="lazy"></div>
+      </figure>
+      -->
+    </div>
+  </div>
+
+  <a class="next" href="other-projects.html"><span>Next</span><b>Other projects</b></a>
+</main>
+
+<footer class="footer-mini">
+  <div class="wrap">
+    <p>Questions about this project?</p>
+    <div class="cta">
+      <a class="btn btn-light" href="mailto:mike.r.meehan01@gmail.com">Email me</a>
+      <a class="btn btn-light" href="https://www.linkedin.com/in/michael-r-meehan" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-light resume-link" href="resume.pdf" target="_blank" rel="noopener" hidden>Resume (PDF)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

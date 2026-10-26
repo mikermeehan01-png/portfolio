@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search-and-Rescue Tilt-rotor VTOL | Mike Meehan</title>
+<meta name="description" content="Senior design capstone at Virginia Tech: a search-and-rescue tilt-rotor VTOL UAV for SUAS.">
+<link rel="icon" href="img/hokiebird.webp">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="blueprint">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">Mike Meehan: Engineering Portfolio</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="payload.html">Payload systems</a>
+        <a href="aircraft.html">Aircraft</a>
+        <a href="vtol.html" aria-current="page">Tilt-rotor VTOL</a>
+        <a href="psa.html">PSA Systems</a>
+        <a href="other-projects.html">Other projects</a>
+      </nav>
+    </header>
+    <div class="page-head">
+      <div style="display:flex;flex-wrap:wrap;gap:24px clamp(24px,4vw,56px);align-items:center;margin-bottom:32px">
+        <div style="flex:1 1 460px;min-width:0">
+          <h1 class="page-title" style="margin-bottom:20px">Search-and-rescue tilt-rotor VTOL</h1>
+          <p class="page-intro" style="margin-bottom:0">Takes off like a multirotor, cruises like a fixed-wing. Two front rotors tilt between hover and cruise; a third rear rotor runs only in hover.</p>
+        </div>
+        <img src="img/vtol-flying.webp" alt="Rendering of the tilt-rotor VTOL in forward flight" style="flex:1 1 420px;min-width:0;max-width:620px;width:100%;height:auto">
+      </div>
+      <dl class="tb">
+        <div><dt>Organization</dt><dd>Senior design, Team 408</dd></div>
+        <div><dt>My role</dt><dd>Structures &amp; Manufacturing</dd></div>
+        <div><dt>Customer</dt><dd>AAV, for SUAS</dd></div>
+        <div><dt>Advisor</dt><dd>Dr. Kevin Kochersberger</dd></div>
+        <div><dt>Status</dt><dd>PDR complete, Oct 2026</dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<main class="wrap body">
+  <div class="split" style="margin-bottom:clamp(40px,5vw,64px)">
+    <div>
+      <h2 class="h-sub" style="margin-bottom:10px">My part</h2>
+      <p class="muted" style="max-width:40ch">On a seven-person team, I'm on structures and manufacturing, and pitch in on propulsion sizing, electronics and prototyping.</p>
+    </div>
+    <ul class="ticks">
+      <li>Built the hover and cruise energy estimates the team used to score concepts; the 2x-tilt tri-rotor beat a 2x-tilt quad 3.91 to 3.81</li>
+      <li>Ran the wing spar trade study: round vs. square carbon tube, sized as a cantilever under tilt-rotor thrust</li>
+      <li>Next: tilt mechanism prototyping, FEA, and a carbon fiber layup for the flight airframe</li>
+    </ul>
+  </div>
+
+  <dl class="tb specs" style="margin-bottom:28px">
+    <div><dt>Wingspan</dt><dd>2.36 m</dd></div>
+    <div><dt>Aspect ratio</dt><dd>9.8</dd></div>
+    <div><dt>Estimated MTOW</dt><dd>20–23 lb</dd></div>
+    <div><dt>Mission target</dt><dd>30 mi + 4 min hover</dd></div>
+    <div><dt>Airfoil</dt><dd>AG35</dd></div>
+  </dl>
+
+  <figure style="margin-bottom:12px">
+    <div class="sheet" style="--h:clamp(300px,40vw,520px);padding:20px"><img src="img/vtol-render.jpg" alt="CAD render of the tilt-rotor VTOL" loading="lazy"></div>
+    <figcaption class="cap">Preliminary design, October 2026</figcaption>
+  </figure>
+  <div class="row">
+    <figure style="flex:3 1 460px">
+      <div class="sheet" style="--h:300px"><img src="img/vtol-concepts.jpg" alt="Sketches of four tilt-rotor concepts" loading="lazy"></div>
+      <figcaption class="cap">Four concepts screened from 21 sketches</figcaption>
+    </figure>
+    <figure style="flex:2 1 360px">
+      <div class="sheet" style="--h:300px"><img src="img/vtol-pugh.jpg" alt="Weighted decision matrix comparing tilt quad-rotor and tilt tri-rotor" loading="lazy"></div>
+      <figcaption class="cap">Down-select weighted on cruise energy (45%) and MTOW (32.5%)</figcaption>
+    </figure>
+  </div>
+  <div class="row" style="margin-bottom:clamp(56px,7vw,96px)">
+    <figure style="flex:1 1 420px">
+      <div class="sheet" style="--h:260px"><img src="img/vtol-tilt-proto.jpg" alt="Three photos of the tilt mechanism prototype rotating" loading="lazy"></div>
+      <figcaption class="cap">Tilt mechanism test rig: hover, transition, cruise</figcaption>
+    </figure>
+    <figure style="flex:1 1 420px">
+      <div class="sheet" style="--h:260px"><img src="img/vtol-wiring.jpg" alt="Wiring diagram of the VTOL electrical system" loading="lazy"></div>
+      <figcaption class="cap">Electrical and power layout</figcaption>
+    </figure>
+  </div>
+
+  <a class="next" href="psa.html"><span>Next project</span><b>PSA Systems</b></a>
+</main>
+
+<footer class="footer-mini">
+  <div class="wrap">
+    <p>Questions about this project?</p>
+    <div class="cta">
+      <a class="btn btn-light" href="mailto:mike.r.meehan01@gmail.com">Email me</a>
+      <a class="btn btn-light" href="https://www.linkedin.com/in/michael-r-meehan" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-light resume-link" href="resume.pdf" target="_blank" rel="noopener" hidden>Resume (PDF)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

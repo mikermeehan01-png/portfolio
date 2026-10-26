@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AAV's Quadcopters | Mike Meehan</title>
+<meta name="description" content="Gray Goose, Condor, and the 2026–27 multirotor Mike Meehan is leading the design of for the Autonomous Aerial Vehicle Team at Virginia Tech.">
+<link rel="icon" href="img/hokiebird.webp">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="blueprint">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">Mike Meehan: Engineering Portfolio</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="payload.html">Payload systems</a>
+        <a href="aircraft.html" aria-current="page">Aircraft</a>
+        <a href="vtol.html">Tilt-rotor VTOL</a>
+        <a href="psa.html">PSA Systems</a>
+        <a href="other-projects.html">Other projects</a>
+      </nav>
+    </header>
+    <div class="page-head">
+      <h1 class="page-title">AAV's quadcopters</h1>
+      <p class="page-intro">I didn't design Gray Goose or Condor. I built the payloads they carried, and when one crashed, helped get the other ready in time. This year I'm leading the design of the next one.</p>
+      <ol class="lineage">
+        <li><a href="#graygoose"><small>2025–26</small><b>Gray Goose</b><span class="chip chip-dark">Lost in a crash, spring 2026</span></a></li>
+        <li><a href="#condor"><small>Spring 2026</small><b>Condor</b><span class="chip chip-gray">Retired after 2025–26</span></a></li>
+        <li><a href="#next"><small>2026–27</small><b>Next multirotor</b><span class="chip">In design, led by me</span></a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<main class="wrap body">
+  <section id="graygoose" class="block">
+    <div class="split">
+      <div>
+        <h2 class="h-big" style="margin-bottom:14px">Gray Goose</h2>
+        <p>AAV's competition quadcopter for most of 2025–26, and the first aircraft I built payloads for. It crashed at the end of the spring semester.</p>
+      </div>
+      <!-- Fill in the specs and remove the hidden attribute to show this table. -->
+      <dl class="tb" hidden>
+        <div><dt>Frame</dt><dd>[frame / class]</dd></div>
+        <div><dt>Flight stack</dt><dd>[autopilot / companion]</dd></div>
+        <div><dt>MTOW</dt><dd>[lb]</dd></div>
+        <div><dt>My part</dt><dd>Payload integration</dd></div>
+      </dl>
+    </div>
+    <div class="row">
+      <figure style="flex:3 1 520px">
+        <div class="media sky" style="--h:460px"><video src="video/graygoose-flight-wide.mp4" poster="video/graygoose-flight-wide.jpg" autoplay muted loop playsinline aria-label="Gray Goose flying above a runway"></video></div>
+        <figcaption class="cap">Flight test over the runway</figcaption>
+      </figure>
+      <figure style="flex:1 1 280px">
+        <div class="media sky tall" style="--h:460px"><video src="video/graygoose-flight-close.mp4" poster="video/graygoose-flight-close.jpg" autoplay muted loop playsinline aria-label="Gray Goose hovering close to the camera"></video></div>
+        <figcaption class="cap">Low hover</figcaption>
+      </figure>
+    </div>
+    <div class="row">
+      <figure style="flex:2 1 520px">
+        <div class="media" style="--h:400px"><img src="img/graygoose-runway.jpg" alt="Gray Goose on a runway with mountains behind" loading="lazy"></div>
+        <figcaption class="cap">On the runway before a test flight</figcaption>
+      </figure>
+      <figure style="flex:1 1 280px">
+        <div class="media tall" style="--h:400px"><img src="img/graygoose-runway-prep.jpg" alt="Team member prepping Gray Goose on the runway" loading="lazy"></div>
+        <figcaption class="cap">Preflight</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="condor" class="block">
+    <div class="callout">
+      <b>Crash at the end of spring.</b>
+      <span>With Gray Goose gone, we redesigned the payload and other systems to fit Condor on a short timeline.</span>
+    </div>
+    <div class="split">
+      <div>
+        <h2 class="h-big" style="margin-bottom:14px">Condor</h2>
+        <p>An X650-class quadcopter that took over after the crash. I adapted the payload systems to its frame and mounting.</p>
+      </div>
+      <dl class="tb">
+        <div><dt>Frame</dt><dd>X650-class quad</dd></div>
+        <div><dt>Flight stack</dt><dd>Pixhawk + Jetson</dd></div>
+        <div><dt>Link</dt><dd>HereLink</dd></div>
+        <div><dt>Sensors</dt><dd>M10 GPS, LW20 lidar, gimbal camera</dd></div>
+      </dl>
+    </div>
+    <div class="row">
+      <figure style="flex:3 1 520px">
+        <div class="media" style="--h:440px"><img src="img/condor-0580.jpg" alt="Condor quadcopter sitting on dry grass, seen from above" loading="lazy"></div>
+        <figcaption class="cap">Condor in the field</figcaption>
+      </figure>
+      <figure style="flex:2 1 380px">
+        <div class="sheet" style="--h:440px"><img src="img/condor-layout.jpg" alt="Four-view drawing of Condor with component labels" loading="lazy"></div>
+        <figcaption class="cap">Layout: HereLink air unit, M10 GPS, Pixhawk-Jetson baseboard, LW20 lidar, payload system</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="next" class="block">
+    <div class="split">
+      <div>
+        <h2 class="h-big" style="margin-bottom:14px">2026–27 multirotor</h2>
+        <p style="margin-bottom:20px">AAV's next CUASC aircraft, and the first one I'm leading the design of. I own the configuration decision with the team president.</p>
+        <dl class="tb">
+          <div><dt>Competition</dt><dd>CUASC</dd></div>
+          <div><dt>My role</dt><dd>Design lead</dd></div>
+          <div><dt>Status</dt><dd>Configuration trade study</dd></div>
+        </dl>
+      </div>
+      <ul class="ticks">
+        <li>Split this fall's new structures members into three teams, each sizing a different multicopter configuration</li>
+        <li>Wrote the lesson plans that take new members from zero to a sizing study</li>
+        <li>Their trade study feeds the configuration decision; final team presentations are October 26</li>
+        <li>Working with the admin team on competition strategy and sponsor outreach</li>
+      </ul>
+    </div>
+    <!-- Add a trade study figure or concept CAD here once the configuration is picked:
+    <figure>
+      <div class="sheet" style="--h:440px"><img src="img/multirotor-concept.jpg" alt="" loading="lazy"></div>
+      <figcaption class="cap"></figcaption>
+    </figure>
+    -->
+  </section>
+
+  <a class="next" href="vtol.html"><span>Next project</span><b>Tilt-rotor VTOL</b></a>
+</main>
+
+<footer class="footer-mini">
+  <div class="wrap">
+    <p>Questions about this project?</p>
+    <div class="cta">
+      <a class="btn btn-light" href="mailto:mike.r.meehan01@gmail.com">Email me</a>
+      <a class="btn btn-light" href="https://www.linkedin.com/in/michael-r-meehan" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-light resume-link" href="resume.pdf" target="_blank" rel="noopener" hidden>Resume (PDF)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

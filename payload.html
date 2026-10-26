@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payload: Deployment &amp; Strategies | Mike Meehan</title>
+<meta name="description" content="SUAS parachute payload system and CUASC release system, 1st place CUASC package drop.">
+<link rel="icon" href="img/hokiebird.webp">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="blueprint">
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">Mike Meehan: Engineering Portfolio</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="payload.html" aria-current="page">Payload systems</a>
+        <a href="aircraft.html">Aircraft</a>
+        <a href="vtol.html">Tilt-rotor VTOL</a>
+        <a href="psa.html">PSA Systems</a>
+        <a href="other-projects.html">Other projects</a>
+      </nav>
+    </header>
+    <div class="page-head">
+      <h1 class="page-title">Payload: Deployment &amp; Strategies</h1>
+      <dl class="tb">
+        <div><dt>Organization</dt><dd>AAV at Virginia Tech</dd></div>
+        <div><dt>My role</dt><dd>Payload sub-team lead</dd></div>
+        <div><dt>Competitions</dt><dd>SUAS and CUASC</dd></div>
+        <div><dt>Season</dt><dd>2025–26</dd></div>
+        <div><dt>Result</dt><dd class="win">1st, CUASC package drop</dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<main class="wrap body">
+  <p class="page-intro">I owned payload delivery for both of our competitions, from release hardware to parachute recovery. When Gray Goose crashed at the end of spring, we redesigned the payload systems to fit on Condor.</p>
+
+  <nav class="cats" aria-label="Payload systems">
+    <a class="cat" href="#suas">
+      <div class="cat-img"><img src="img/payload-1.jpg" alt=""></div>
+      <div class="cat-text"><small>SUAS</small><b class="cat-t">SUAS Parachute System</b><span>Beacon and water bottle payloads under 24" chutes</span></div>
+    </a>
+    <a class="cat" href="#cuasc">
+      <div class="cat-img contain"><img src="img/cad-beanbag-release.jpg" alt=""></div>
+      <div class="cat-text"><small>CUASC</small><b class="cat-t">CUASC System</b><span>Beanbag and cube releases, 1st place package drop</span></div>
+    </a>
+  </nav>
+
+  <section id="suas" class="block">
+    <div class="sec-h"><h2 class="h-sec">SUAS Parachute System</h2></div>
+    <div class="split">
+      <p>A quick-release payload system that carries a locator beacon and a water bottle, each recovered under its own parachute.</p>
+      <ul class="ticks">
+        <li>Designed a quick-release mount with a pogo-pin connector, so payloads swap on the aircraft without rewiring</li>
+        <li>Ran parachute recovery end to end: selected 24" Top Flight Recovery X-type chutes, packed them in a printed TPU harness with a foam ejection block, and drop-tested</li>
+        <li>Water bottle and beacon payloads drop on E-flite EFLA405 servoless releases</li>
+        <li>WeMos D1 Mini microcontrollers run the release logic and the locator beacon</li>
+        <li>Logged drop-test data and processed it in MATLAB to tune release timing and placement</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <figure style="flex:2 1 520px">
+        <div class="sheet" style="--h:460px"><img src="img/cad-beacon-system.jpg" alt="CAD drawing of the beacon payload system with labeled components" loading="lazy"></div>
+        <figcaption class="cap">Beacon payload, prototype 2: pogo-pin connector, servo release pin, TPU harness, foam ejection block, 24" X-chute</figcaption>
+      </figure>
+      <figure style="flex:1 1 280px">
+        <div class="media tall" style="--h:460px"><img src="img/payload-1.jpg" alt="Hand holding the orange 3D-printed beacon payload with parachute" loading="lazy"></div>
+        <figcaption class="cap">Assembled beacon payload</figcaption>
+      </figure>
+    </div>
+    <div class="row gap-after">
+      <figure style="flex:1 1 280px">
+        <div class="media tall" style="--h:440px"><img src="img/payload-on-condor.jpg" alt="Payload hanging under the quadcopter on a workbench" loading="lazy"></div>
+        <figcaption class="cap">Mounted on the quick-release</figcaption>
+      </figure>
+      <figure style="flex:1 1 280px">
+        <div class="media tall" style="--h:440px"><img src="img/payload-beacon.jpg" alt="Payload stack with water bottle and beacon held up in a hangar" loading="lazy"></div>
+        <figcaption class="cap">Beacon and water bottle stack</figcaption>
+      </figure>
+      <figure style="flex:2 1 460px">
+        <div class="sheet" style="--h:440px"><img src="img/cad-suas-mount.jpg" alt="CAD drawing of the SUAS payload mount with water bottle and beacon payloads" loading="lazy"></div>
+        <figcaption class="cap">SUAS mount: water bottle and beacon payloads on EFLA405 releases</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="h-sub">Drop testing</h3>
+    <p class="muted" style="margin-bottom:18px;max-width:62ch">Every chute packing and release change got dropped before it flew at competition.</p>
+    <div class="row">
+      <!-- Aerial clip: save a trimmed, muted MP4 as video/drop-aerial.mp4 and it shows up automatically. -->
+      <figure class="clip" style="flex:1 1 320px" data-optional hidden>
+        <div class="media sky tall" style="--h:560px"><video src="video/drop-aerial.mp4" autoplay muted loop playsinline preload="auto" aria-label="Parachute drop test filmed from the chase drone"></video></div>
+        <figcaption class="cap">From the chase drone</figcaption>
+      </figure>
+      <figure class="clip" style="flex:1 1 320px">
+        <div class="media sky tall" style="--h:560px"><video src="video/chute-drop.mp4" poster="video/chute-drop.jpg" autoplay muted loop playsinline aria-label="Parachute drop test seen from the ground"></video></div>
+        <figcaption class="cap">From the ground, 24" chute</figcaption>
+      </figure>
+      <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;justify-content:flex-end">
+        <dl class="tb one">
+          <div><dt>Chute</dt><dd>Top Flight Recovery 24" X-type</dd></div>
+          <div><dt>Ejection</dt><dd>Foam block, printed TPU harness</dd></div>
+          <div><dt>Release</dt><dd>Spektrum 2.9 g linear servo</dd></div>
+          <div><dt>Data</dt><dd>Processed in MATLAB</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="cuasc" class="block">
+    <div class="sec-h"><h2 class="h-sec">CUASC System</h2><span class="chip">1st place, package drop</span></div>
+    <div class="split">
+      <p>Purpose-built release modules for each CUASC package type, on a common quick-release adapter.</p>
+      <ul class="ticks">
+        <li>Built a release module for each package type: a flexible TPU mesh for beanbags and a servo-driven cage for cubes</li>
+        <li>Beanbag modules drop on E-flite servoless releases; the cube cage releases on an MG995 servo</li>
+        <li>Both modules mount on a shared quick-release adapter</li>
+        <li>Took 1st place in the CUASC package drop challenge</li>
+      </ul>
+    </div>
+    <div class="row">
+      <figure style="flex:1 1 380px">
+        <div class="sheet" style="--h:320px"><img src="img/cad-beanbag-release.jpg" alt="CAD drawing of the beanbag release module" loading="lazy"></div>
+        <figcaption class="cap">Beanbag release with flexible TPU mesh</figcaption>
+      </figure>
+      <figure style="flex:1 1 380px">
+        <div class="sheet" style="--h:320px"><img src="img/cad-cube-release.jpg" alt="CAD drawing of the cube cage release with servo" loading="lazy"></div>
+        <figcaption class="cap">Cube cage with MG995 servo release</figcaption>
+      </figure>
+    </div>
+    <div class="row">
+      <figure style="flex:1 1 280px">
+        <div class="media tall" style="--h:420px"><img src="img/cuasc-condor-field.jpg" alt="Quadcopter on a dirt field with a radio tower behind" loading="lazy"></div>
+        <figcaption class="cap">On the field at CUASC</figcaption>
+      </figure>
+      <figure style="flex:2 1 520px">
+        <div class="media" style="--h:420px"><img src="img/cuasc-team.jpg" alt="Five AAV team members in safety vests holding the drone" loading="lazy"></div>
+        <figcaption class="cap">AAV at CUASC</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <a class="next" href="aircraft.html"><span>Next project</span><b>Aircraft</b></a>
+</main>
+
+<footer class="footer-mini">
+  <div class="wrap">
+    <p>Questions about this project?</p>
+    <div class="cta">
+      <a class="btn btn-light" href="mailto:mike.r.meehan01@gmail.com">Email me</a>
+      <a class="btn btn-light" href="https://www.linkedin.com/in/michael-r-meehan" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-light resume-link" href="resume.pdf" target="_blank" rel="noopener" hidden>Resume (PDF)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>
